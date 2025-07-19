@@ -1,6 +1,7 @@
 import React from "react";
 import Tilt from "react-parallax-tilt";
-import { SkillsInfo } from "../assets/constants";
+import { SkillsInfo } from "../constants";
+
 
 const Skills = () => {
   return (

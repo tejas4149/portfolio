@@ -1,11 +1,11 @@
-import About from "./assets/Pages/About";
-import Education from "./assets/Pages/Education";
-import Experience from "./assets/Pages/Experience";
-// import Footer from "./assets/Pages/Footer";
-import Navbar from "./assets/Pages/Navbar";
-import Skills from "./assets/Pages/Skills";
-import Work from "./assets/Pages/Work";
-import Contact from "./assets/Pages/Contact";
+import About from "./Pages/About";
+import Education from "./Pages/Education";
+import Experience from "./Pages/Experience";
+// import Footer from "./Pages/Footer";
+import Navbar from "./Pages/Navbar";
+import Skills from "./Pages/Skills";
+import Work from "./Pages/Work";
+import Contact from "./Pages/Contact";
 
 function App() {
   return (
@@ -34,8 +34,6 @@ function App() {
       <div id="contact">
         <Contact />
       </div>
-
-     
     </div>
   );
 }
