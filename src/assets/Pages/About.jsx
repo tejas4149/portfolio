@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import profile1 from "../../assets/profile1.jpg";
+import profile1 from "../../assets/profile1.JPG";
 import Tejas_Yadav_Resume from "../Resume/Tejas Yadav Resume.pdf";
 
 const About = () => {
