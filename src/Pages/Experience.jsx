@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { experiences } from "../constants";
+import logo from "../assets/company_logo/suyotech.png"
 
 const Experience = () => {
   useEffect(() => {
