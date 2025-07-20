@@ -105,7 +105,7 @@ const Contact = () => {
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/in/tejas4149"
+            href="https://www.linkedin.com/in/tejas-yadav-84bb77284/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white text-2xl transition"
