@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import profile1 from "../assets/profile1.JPG";
 import Tejas_Yadav_Resume from "/Resume/Tejas Yadav Resume.pdf";
 
@@ -27,13 +28,21 @@ const About = () => {
   }, [subIndex, index, deleting, roles]);
 
   return (
-    <section
+    <motion.section
       id="about"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.2, ease: "easeOut" }}
       className="py-40 px-[7vw] lg:px-[15vw] font-sans bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e]"
     >
       <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
         {/* Text Content */}
-        <div className="w-full md:w-1/2 text-center md:text-left">
+        <motion.div
+          className="w-full md:w-1/2 text-center md:text-left"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2 }}
+        >
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
             Hi, I am
           </h1>
@@ -64,20 +73,31 @@ const About = () => {
           >
             DOWNLOAD CV
           </a>
-        </div>
+        </motion.div>
 
         {/* Profile Image */}
-        <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-          <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 border-4 border-purple-700 rounded-full overflow-hidden shadow-lg">
-            <img
-              src={profile1}
-              alt="Tejas Yadav"
-              className="w-full h-full object-cover rounded-full"
-            />
+        <motion.div
+          className="w-full md:w-1/2 flex justify-center md:justify-end"
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.4 }}
+        >
+          <div className="relative group">
+            <div className="absolute inset-0 animate-spin-slow border-4 border-dashed rounded-full border-purple-500 group-hover:border-purple-400 blur-md opacity-40 w-full h-full"></div>
+            <div
+              className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden shadow-xl border-4 border-purple-600
+                 transform transition-transform duration-700 hover:scale-105 animate-float"
+            >
+              <img
+                src={profile1}
+                alt="Tejas Yadav"
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
