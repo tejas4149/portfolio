@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import profile1 from "../assets/profile1.JPG";
-import Tejas_Yadav_Resume from "/Resume/Tejas Yadav Resume.pdf";
+import Tejas_Yadav_Resume from "../assets/Resume/tejasresume.pdf";
 
 const About = () => {
   const roles = ["Fullstack Developer", "App Developer", "UI/UX Designer"];
