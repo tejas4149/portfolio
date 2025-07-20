@@ -1,79 +1,112 @@
-import React, { useEffect } from "react";
+import React from "react";
+import Tilt from "react-parallax-tilt";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { experiences } from "../constants";
-import logo from "../assets/company_logo/suyotech.png"
+
+// Import company logos
+import suyotechLogo from "../assets/company_logo/suyotech.png";
+
+// Initialize AOS
+AOS.init();
+
+const experiences = [
+  {
+    id: 0,
+    logo: suyotechLogo,
+    company: "Suyotech Solutions",
+    role: "Full Stack Developer",
+    duration: "Jan 2025 - Present",
+    location: "Kolhapur, Maharashtra",
+    description: [
+      "Built fullstack solutions using React, Node.js, Express, and MongoDB.",
+      "Designed responsive UIs with Tailwind CSS and optimized frontend performance.",
+      "Developed and integrated RESTful APIs, improving data flow and scalability.",
+      "Collaborated in agile sprints, delivering high-quality code in tight deadlines.",
+    ],
+    skills: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Tailwind CSS",
+      "REST API",
+    ],
+  },
+  {
+    id: 1,
+    logo: suyotechLogo,
+    company: "Beyound Solution Kolhapur",
+    role: "Frontend Intern",
+    duration: "Oct 2024 - Dec 2024",
+    location: "Remote",
+    description: [
+      "Translated Figma designs into responsive UI using HTML, CSS, and JavaScript.",
+      "Built reusable components with Material UI and Bootstrap.",
+      "Collaborated in teams to deliver clean and accessible interfaces.",
+    ],
+    skills: ["HTML", "CSS", "JavaScript", "Material UI", "Bootstrap", "Figma"],
+  },
+];
 
 const Experience = () => {
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
-
   return (
     <section
       id="experience"
-      className="py-10 px-[7vw] lg:px-[15vw] font-sans bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white"
+      className="py-24 px-[10vw] md:px-[7vw] lg:px-[15vw] bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e]"
     >
-      {/* Heading */}
-      <div className="text-center mb-20">
-        <h2 className="text-5xl font-extrabold tracking-wide">Experience</h2>
-        <div className="w-24 h-1 bg-purple-500 mx-auto mt-4" />
-        <p className="text-lg text-gray-400 mt-4">
-          My journey so far in the world of development.
+      <div className="text-center mb-10">
+        <h2 className="text-4xl font-bold text-white">Experience</h2>
+        <div className="w-24 h-1 bg-[#8245ec] mx-auto mt-2" />
+        <p className="text-gray-400 mt-4 text-lg max-w-2xl mx-auto">
+          A journey of growth, problem solving, and impact through real-world projects.
         </p>
       </div>
 
-      {/* Experience Cards */}
-      <div className="flex flex-col gap-16">
+      <div className="grid md:grid-cols-2 gap-8">
         {experiences.map((exp, index) => (
-          <div
-            key={exp.id}
-            className="flex flex-col md:flex-row items-center gap-12 bg-[#1f1f38]/80 backdrop-blur-lg border border-purple-700 rounded-3xl shadow-2xl p-8 md:p-12 transition-all duration-500"
-            data-aos="fade-up"
-            data-aos-delay={`${index * 150}`}
+          <Tilt
+            key={index}
+            tiltMaxAngleX={15}
+            tiltMaxAngleY={15}
+            scale={1.03}
+            transitionSpeed={900}
           >
-            {/* Logo */}
-            <div className="w-32 h-32 min-w-[128px] bg-white rounded-full flex items-center justify-center shadow-md">
-              <img
-                src={exp.logo || "/company-placeholder.svg"}
-                alt={exp.company}
-                className="w-20 h-20 object-contain"
-              />
-            </div>
-
-            {/* Details */}
-            <div className="flex-1">
-              <h3 className="text-2xl md:text-3xl font-bold text-purple-400 mb-2">{exp.role}</h3>
-              <p className="text-lg text-gray-300 mb-1">
-                {exp.company} • {exp.location}
-              </p>
-              <p className="text-sm text-gray-400 italic mb-4">{exp.duration}</p>
-
-              <ul className="list-disc pl-5 text-base text-gray-300 space-y-3 leading-relaxed">
-                {exp.description.map((item, i) => (
-                  <li
-                    key={i}
-                    className="hover:translate-x-1 hover:text-purple-400 transition-all duration-300"
-                  >
-                    {item}
-                  </li>
+            <div
+              className="bg-[#1c1c2c] p-6 rounded-xl border border-[#333] shadow-md hover:shadow-lg transition duration-300"
+              data-aos="fade-up"
+              data-aos-delay={index * 150}
+            >
+              <div className="flex items-center gap-4 mb-4">
+                <img
+                  src={exp.logo}
+                  alt={exp.company}
+                  className="w-12 h-12 object-contain"
+                />
+                <div>
+                  <h3 className="text-xl font-semibold text-white">{exp.company}</h3>
+                  <p className="text-sm text-gray-400">
+                    {exp.duration} • {exp.location}
+                  </p>
+                </div>
+              </div>
+              <h4 className="text-md font-medium text-[#a18aff] mb-2">{exp.role}</h4>
+              <ul className="text-gray-300 list-disc list-inside space-y-1 mb-4">
+                {exp.description.map((task, idx) => (
+                  <li key={idx}>{task}</li>
                 ))}
               </ul>
-
-              {exp.skills && (
-                <div className="mt-6 flex flex-wrap gap-3">
-                  {exp.skills.map((skill, idx) => (
-                    <span
-                      key={idx}
-                      className="bg-purple-700/80 text-sm text-white px-3 py-1 rounded-full"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              )}
+              <div className="flex flex-wrap gap-2 mt-2">
+                {exp.skills.map((skill, i) => (
+                  <span
+                    key={i}
+                    className="text-xs bg-[#2a2a40] text-white py-1 px-2 rounded-full"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          </Tilt>
         ))}
       </div>
     </section>
