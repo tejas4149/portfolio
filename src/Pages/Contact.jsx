@@ -40,7 +40,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-10 px-[10vw] md:px-[7vw] lg:px-[15vw] bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white"
+      className="py-5 px-[10vw] md:px-[7vw] lg:px-[15vw] bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white"
     >
       <ToastContainer />
 
@@ -52,7 +52,7 @@ const Contact = () => {
         </p>
       </div>
 
-      <div className="bg-[#1b1b2f] border border-[#2a2a40] rounded-2xl p-8 shadow-md max-w-3xl mx-auto">
+      <div className="bg-[#1b1b2f] border border-[#2a2a40] rounded-2xl p-6 shadow-md max-w-3xl mx-auto">
         <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-5">
           <input
             type="text"
@@ -95,7 +95,7 @@ const Contact = () => {
         </form>
 
         {/* Social Icons */}
-        <div className="flex justify-center gap-6 mt-8">
+        <div className="flex justify-center gap-6 mt-5">
           <a
             href="https://github.com/tejas4149"
             target="_blank"

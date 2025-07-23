@@ -24,7 +24,7 @@ function App() {
         <Experience />
       </div>
 
-      <div id="work">
+      <div id="projects">
         <Work />
       </div>
 

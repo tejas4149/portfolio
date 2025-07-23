@@ -46,87 +46,98 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="py-24 px-[10vw] md:px-[7vw] lg:px-[15vw] bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white"
+      className="py-12 px-[10vw] md:px-[7vw] lg:px-[15vw] bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white"
     >
+      {/* ✨ Header Title */}
+         <div className="text-center mb-5" data-aos="fade-down">
+        <h2 className="text-4xl font-bold">Education</h2>
+        <div className="w-24 h-1 bg-[#8245ec] mx-auto mt-3" />
+        
+      </div>
       <div className="grid md:grid-cols-2 gap-8">
-  {educationList.slice(0, 2).map((edu, index) => (
-    <Tilt
-      key={edu.id}
-      tiltMaxAngleX={15}
-      tiltMaxAngleY={15}
-      scale={1.03}
-      transitionSpeed={900}
-    >
-      <div
-        className="bg-[#1c1c2c] p-6 rounded-xl border border-[#333] shadow-md hover:shadow-lg transition duration-300"
-        data-aos="fade-up"
-        data-aos-delay={index * 150}
-      >
-        <div className="flex items-center gap-4 mb-4">
-          <img
-            src={edu.img}
-            alt={edu.institution}
-            className="w-14 h-14 object-contain"
-          />
-          <div>
-            <h3 className="text-xl font-semibold text-white">
-              {edu.institution}
-            </h3>
-            <p className="text-sm text-gray-400">{edu.duration}</p>
-            <p className="text-sm text-gray-500">{edu.location}</p>
+        {educationList.slice(0, 2).map((edu, index) => (
+          <Tilt
+            key={edu.id}
+            tiltMaxAngleX={15}
+            tiltMaxAngleY={15}
+            scale={1.03}
+            transitionSpeed={900}
+          >
+            <div
+              className="bg-[#1c1c2c] p-6 rounded-xl border border-[#333] shadow-md hover:shadow-lg transition duration-300"
+              data-aos="fade-up"
+              data-aos-delay={index * 150}
+            >
+              <div className="flex items-center gap-4 mb-4">
+                <img
+                  src={edu.img}
+                  alt={edu.institution}
+                  className="w-14 h-14 object-contain"
+                />
+                <div>
+                  <h3 className="text-xl font-semibold text-white">
+                    {edu.institution}
+                  </h3>
+                  <p className="text-sm text-gray-400">{edu.duration}</p>
+                  <p className="text-sm text-gray-500">{edu.location}</p>
+                </div>
+              </div>
+              <p className="text-md text-[#a18aff] font-semibold mb-1">
+                {edu.degree}
+              </p>
+              <p className="text-sm text-gray-300 mb-2">{edu.desc}</p>
+              <p className="text-sm text-gray-400 font-semibold">
+                Grade: {edu.grade}
+              </p>
+            </div>
+          </Tilt>
+        ))}
+      </div>
+
+      {/* Centered 3rd education block */}
+      <div className="flex justify-center mt-10">
+        <Tilt
+          key={educationList[2].id}
+          tiltMaxAngleX={15}
+          tiltMaxAngleY={15}
+          scale={1.03}
+          transitionSpeed={900}
+        >
+          <div
+            className="bg-[#1c1c2c] w-full max-w-md p-6 rounded-xl border border-[#333] shadow-md hover:shadow-lg transition duration-300"
+            data-aos="fade-up"
+            data-aos-delay={2 * 150}
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <img
+                src={educationList[2].img}
+                alt={educationList[2].institution}
+                className="w-14 h-14 object-contain"
+              />
+              <div>
+                <h3 className="text-xl font-semibold text-white">
+                  {educationList[2].institution}
+                </h3>
+                <p className="text-sm text-gray-400">
+                  {educationList[2].duration}
+                </p>
+                <p className="text-sm text-gray-500">
+                  {educationList[2].location}
+                </p>
+              </div>
+            </div>
+            <p className="text-md text-[#a18aff] font-semibold mb-1">
+              {educationList[2].degree}
+            </p>
+            <p className="text-sm text-gray-300 mb-2">
+              {educationList[2].desc}
+            </p>
+            <p className="text-sm text-gray-400 font-semibold">
+              Grade: {educationList[2].grade}
+            </p>
           </div>
-        </div>
-        <p className="text-md text-[#a18aff] font-semibold mb-1">
-          {edu.degree}
-        </p>
-        <p className="text-sm text-gray-300 mb-2">{edu.desc}</p>
-        <p className="text-sm text-gray-400 font-semibold">
-          Grade: {edu.grade}
-        </p>
+        </Tilt>
       </div>
-    </Tilt>
-  ))}
-</div>
-
-{/* Centered 3rd education block */}
-<div className="flex justify-center mt-10">
-  <Tilt
-    key={educationList[2].id}
-    tiltMaxAngleX={15}
-    tiltMaxAngleY={15}
-    scale={1.03}
-    transitionSpeed={900}
-  >
-    <div
-      className="bg-[#1c1c2c] w-full max-w-md p-6 rounded-xl border border-[#333] shadow-md hover:shadow-lg transition duration-300"
-      data-aos="fade-up"
-      data-aos-delay={2 * 150}
-    >
-      <div className="flex items-center gap-4 mb-4">
-        <img
-          src={educationList[2].img}
-          alt={educationList[2].institution}
-          className="w-14 h-14 object-contain"
-        />
-        <div>
-          <h3 className="text-xl font-semibold text-white">
-            {educationList[2].institution}
-          </h3>
-          <p className="text-sm text-gray-400">{educationList[2].duration}</p>
-          <p className="text-sm text-gray-500">{educationList[2].location}</p>
-        </div>
-      </div>
-      <p className="text-md text-[#a18aff] font-semibold mb-1">
-        {educationList[2].degree}
-      </p>
-      <p className="text-sm text-gray-300 mb-2">{educationList[2].desc}</p>
-      <p className="text-sm text-gray-400 font-semibold">
-        Grade: {educationList[2].grade}
-      </p>
-    </div>
-  </Tilt>
-</div>
-
     </section>
   );
 };

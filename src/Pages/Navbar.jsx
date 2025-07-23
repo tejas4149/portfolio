@@ -4,7 +4,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const navItems = ["About", "Skills", "Experience", "Work", "Education", "Contact"];
+  const navItems = ["About", "Skills", "Experience", "Projects", "Education", "Contact"];
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 

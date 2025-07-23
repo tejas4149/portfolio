@@ -54,11 +54,12 @@ const Experience = () => {
       id="experience"
       className="py-24 px-[10vw] md:px-[7vw] lg:px-[15vw] bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e]"
     >
-      <div className="text-center mb-10">
+     
+         <div className="text-center mb-14" data-aos="fade-down">
         <h2 className="text-4xl font-bold text-white">Experience</h2>
-        <div className="w-24 h-1 bg-[#8245ec] mx-auto mt-2" />
-        <p className="text-gray-400 mt-4 text-lg max-w-2xl mx-auto">
-          A journey of growth, problem solving, and impact through real-world projects.
+        <div className="w-24 h-1 bg-[#8245ec] mx-auto mt-3" />
+        <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">
+           A journey of growth, problem solving, and impact through real-world projects.
         </p>
       </div>
 
