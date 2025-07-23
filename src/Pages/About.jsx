@@ -33,7 +33,7 @@ const About = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.2, ease: "easeOut" }}
-      className="py-40 px-[7vw] lg:px-[15vw] font-sans bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e]"
+      className="py-38 px-[7vw] lg:px-[15vw] font-sans bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e]"
     >
       <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
         {/* Text Content */}

@@ -14,18 +14,18 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed w-full z-50 bg-[#0d081f] text-white shadow-lg transition-all duration-500 ease-in-out">
+    <header className="fixed w-full h-18 z-50 bg-[#0d081f] text-white shadow-lg transition-all duration-500 ease-in-out">
       <div className="container mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo */}
         <h1
-          className="text-2xl font-extrabold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent cursor-pointer hover:scale-105 transition-transform duration-300"
+          className="text-3xl font-extrabold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent cursor-pointer hover:scale-105 transition-transform duration-300"
           onClick={scrollToTop}
         >
           Portfolio
         </h1>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex space-x-8 items-center">
+        <nav className="hidden md:flex  space-x-8 items-center text-lg">
           {navItems.map((item) => (
             <Link
               key={item}
